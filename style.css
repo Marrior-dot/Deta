@@ -4,6 +4,7 @@
 }
 html{
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 .twoxtwo{
     width: 80%;
@@ -67,6 +68,7 @@ header p:nth-child(2){
 	font-weight: normal;
 	font-size: 2.4rem;
 	margin-top: 0;
+	text-align: center;
 }
 header div:nth-child(3){
         display: flex;
@@ -196,4 +198,47 @@ header label{
 	display: flex;
     	align-items: center;
     	justify-content: center;
+}
+@media screen and (min-width: 600px) and (max-width: 800px){
+	header h1{
+		font-size: calc(8vw + 5px);
+	}
+	header p:nth-child(2){
+		font-size: calc(2vw + 5px);	
+		text-align: center;
+	}
+	header label{
+		font-size: calc(2vw + 5px);
+	}
+	#result{
+		width: 70%;
+	}
+}
+@media screen and (max-width: 600px){
+	.container{
+		grid-template-columns: 0;
+		grid-template-rows: 50% 50%;
+	}
+	header{
+		width: 100vw;
+		height: 50vh;
+	}
+	.container main{
+		border-radius: 0;
+		height: 70vh;
+		width: 100vw;
+	}
+	header h1{
+		font-size: calc(10vw + 5px);
+	}
+	header p:nth-child(2){
+		font-size: calc(3vw + 5px);	
+		text-align: center;
+	}
+	header label{
+		font-size: calc(3vw + 5px);
+	}
+	#result{
+		width: 85%;
+	}
 }
