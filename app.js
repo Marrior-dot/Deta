@@ -10,6 +10,17 @@ let Result=document.getElementById("result");
 let listWarn=[]
 let warn=document.getElementById("warn");
 
+console.log(localStorage)
+//localStorage
+	if(typeof(Storage)!=="undefined"){
+			Result.innerText=localStorage.Result
+
+			let twoNums = JSON.parse(localStorage.getItem("twolist"))
+			for(let count=0; count<twoNums.length; count++){
+			two_two[count].value=twoNums[count]
+		}
+	}
+
 //Função pra mostrar os grids de calculos
 function Showgrid(event){
 	if(event.target.id === btnbGrds[0].id){
@@ -40,6 +51,7 @@ calcular.addEventListener("click", () =>{
 	warn.innerText=""
 	//Cálculo 2x2
 	if(twox[0].style.display === "grid"){
+
 		for(let twof=0; twof<two_two.length; twof=twof+1){
 			if(two_two[twof].value == ""){
 			listWarn.push(two_two[twof].placeholder)
@@ -50,13 +62,29 @@ calcular.addEventListener("click", () =>{
 			listWarn=[]
 			return ""	
 		}
+
 	const AD = parseFloat(two_two[0].value)*parseFloat(two_two[3].value) 	
 	const BC = parseFloat(two_two[1].value)*parseFloat(two_two[2].value)
 	Result.innerText=(AD-BC)
+	localStorage.setItem("Result", Result.innerText)
+
+	//Cria o item no localStorage caso n exista e transforma o arquivo em formato JSON para que o array assuma a função de Array e nãode string.
+		
+	if(localStorage.getItem("twolist") === null || localStorage.getItem("twolist") !== '[]'){
+		let twolist = localStorage.setItem("twolist", '[]') 
+	}
+	let twolistP = JSON.parse(localStorage.getItem("twolist"))
+	//Bota todos os elementos da NodeList dentro do Array e converte denovo para o formato string de para o localStorage
+	for(let o =0; o<two_two.length; o++){
+		twolistP.push(two_two[o].value)	
+		console.log(twolistP)
+		}	
+	localStorage.setItem("twolist", JSON.stringify(twolistP))
 	for(let twoi = 0;twoi<two_two.length;twoi++){
-		two_two[twoi].value=""
+		two_two[twoi].value="";
+		}
 	}
-	}
+
 	//Cálculo 3x3
 	else if (thrx[0].style.display === "grid"){
 	for(let thrf=0; thrf<thr_thr.length; thrf++){
@@ -131,5 +159,7 @@ calcular.addEventListener("click", () =>{
 	four[fouri].value=""
 	}
 	}
-})
+ }
+)
+
 
