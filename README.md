@@ -8,4 +8,5 @@ Pagina web para fins de auxiliar nas atividade de algebra linear referentes aos 
 <br>
 3 - Clique em "calcular", para apagar todos os valores clique em apagar.
 
-![Captura de tela de 2022-01-27 22-15-53](https://user-images.githubusercontent.com/59967704/151470026-f6609eb7-ce1a-44a8-aafd-0e8a5ddfcbff.png)
+
+![Captura de tela de 2022-01-27 22-20-25](https://user-images.githubusercontent.com/59967704/151470358-667dc6f0-2255-4fd8-a0e0-d2a333f5a767.png)
