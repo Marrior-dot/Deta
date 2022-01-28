@@ -200,6 +200,8 @@ eraser.addEventListener("click", () =>{
 			four[fouri].value=""
 		}	
 	}
+	Result.innerText=""
+
 })
 
 
