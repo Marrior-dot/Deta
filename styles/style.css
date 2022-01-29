@@ -217,7 +217,7 @@ header label{
 		width: 70%;
 	}
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 900px){
 	.container{
 		grid-template-columns: 0;
 		grid-template-rows: 50% 50%;
