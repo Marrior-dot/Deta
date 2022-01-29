@@ -11,26 +11,34 @@ let listWarn=[]
 let warn=document.getElementById("warn");
 let eraser=document.getElementById("erase")
 
+console.log(localStorage.getItem(""))
 //localStorage
 	if(typeof(Storage)!=="undefined"){
 		//Storage do Resultado
+		if(localStorage.getItem("Result") !== null){
 			Result.innerText=localStorage.Result
+		}
 		//Storage do 2x2
+		if(localStorage.getItem("twolist") !== null){
 			let twoNums = JSON.parse(localStorage.getItem("twolist"))
 			for(let count=0; count<twoNums.length; count++){
 			two_two[count].value=twoNums[count]
 		}
-		//Storage do 3x3 
+		}
+		//Storage do 3x3	
+		if(localStorage.getItem("thrList") !== null){ 
 			let thrNums = JSON.parse(localStorage.getItem("thrList"))
 			for(let countThr=0; countThr<thrNums.length; countThr++){
 			thr_thr[countThr].value=thrNums[countThr]
 		}
+		}
 		//Storage do 4x4
+		if(localStorage.getItem("fourList") !== null){
 			let fourNums=JSON.parse(localStorage.getItem("fourList"))
 			for(let countF=0; countF<fourNums.length; countF++){
 			four[countF].value = fourNums[countF]
 		}
-	}
+	}}
 
 //Função pra mostrar os grids de calculos
 function Showgrid(event){
